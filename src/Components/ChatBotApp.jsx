@@ -66,7 +66,8 @@ const ChatBotApp = ({ onGoBack, chats, setChats, activeChat, setActiveChat, onNe
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+          Authorization: `Bearer ${process.env.VITE_OPENAI_API_KEY}`,
+
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
