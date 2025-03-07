@@ -9,6 +9,7 @@ import data from '@emoji-mart/data'
 
 async function getOpenAIKey() {
     const response = await fetch('../api-key');
+    console.log("Prajwal reached to the getOpenAPIKey");
     return response.ok ? await response.text() : null;
 }
 
