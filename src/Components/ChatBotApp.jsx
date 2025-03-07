@@ -6,9 +6,10 @@ import "boxicons/css/boxicons.min.css";
 import Picker from '@emoji-mart/react'
 import data from '@emoji-mart/data'
 
-
 async function getOpenAIKey() {
-    const response = await fetch('../api-key');
+    const response = new Response(import.meta.env.VITE_OPENAI_API_KEY, {
+        headers: { 'Content-Type': 'text/plain' },
+    });
     console.log("Prajwal reached to the getOpenAPIKey");
     return response.ok ? await response.text() : null;
 }
