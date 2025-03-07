@@ -5,6 +5,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "boxicons/css/boxicons.min.css";
 import Picker from '@emoji-mart/react'
 import data from '@emoji-mart/data'
+const apiKey = import.meta.env.VITE_OPENAI_API_KEY;  // Correct way in Vite
+
 
 const ChatBotApp = ({ onGoBack, chats, setChats, activeChat, setActiveChat, onNewChat }) => {
   const [inputValue, setInputValue] = useState('')
@@ -62,13 +64,13 @@ const ChatBotApp = ({ onGoBack, chats, setChats, activeChat, setActiveChat, onNe
       localStorage.setItem('chats', JSON.stringify(updatedChats))
       setIsTyping(true)
 
-      console.log("Prajwal, OpenAI API Key:", process.env.OPENAI_API_KEY ? "Loaded" : "Not Found");
+      console.log("Prajwal, OpenAI API Key:", apiKey ? "Loaded" : "Not Found");
 
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          Authorization: `Bearer ${apiKey}`,
 
         },
         body: JSON.stringify({
