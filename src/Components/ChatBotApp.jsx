@@ -62,10 +62,7 @@ const ChatBotApp = ({ onGoBack, chats, setChats, activeChat, setActiveChat, onNe
       localStorage.setItem('chats', JSON.stringify(updatedChats))
       setIsTyping(true)
 
-      console.log("Prajwal here is the cursor rn:",process.env);
-      console.log( process.env.VITE_OPENAI_API_KEY);
-      // env:
-        // VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
+      console.log("Prajwal, OpenAI API Key:", process.env.OPENAI_API_KEY ? "Loaded" : "Not Found");
 
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
