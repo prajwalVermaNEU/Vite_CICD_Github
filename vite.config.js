@@ -8,5 +8,8 @@ export default defineConfig({
   server: {
     open: true,
     port:3001,
-  }
+  },
+  define: {
+    'process.env.VITE_OPENAI_API_KEY': `"${process.env.VITE_OPENAI_API_KEY}"`,
+  },
 })
