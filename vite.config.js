@@ -7,7 +7,7 @@ export default defineConfig({
   base:"/Vite_CICD_Github/",
   server: {
     open: true,
-    port:3001,
+    port:3000,
   },
   define: {
     'import.meta.env.VITE_OPENAI_API_KEY': '""',
