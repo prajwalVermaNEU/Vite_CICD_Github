@@ -30,6 +30,9 @@ jobs:
         run: |
           echo "VITE_OPENAI_API_KEY=${{ secrets.VITE_OPENAI_API_KEY }}" > .env
 
+      - name: Verify .env file content
+        run: cat .env
+
       # Install Dependencies
       - name: Install Dependencies
         run: npm install
